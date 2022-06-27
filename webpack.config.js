@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports ={
     mode: 'development',
@@ -15,17 +16,22 @@ module.exports ={
             filename:'index.html'
         }),
         new CleanWebpackPlugin(),
+        new VueLoaderPlugin()
         
        
     ],
     module: {
         rules: [
             {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
                 test:/\.css$/,
                 use:["style-loader", "css-loader"],
             },
             {
-                test:/\.less$/,
+                test:/\.less$/, 
                 use:["style-loader", "css-loader","less-loader"],
             },
             {
@@ -60,9 +66,25 @@ module.exports ={
                         presets: ['@babel/preset-env'] 
                     }
                 }
-            }
+            },
+            
+            // {
+            //     test: /\.js$/,
+            //     loader: 'babel-loader'
+            //   },
+            //   {
+            //     test: /\.css$/,
+            //     use: [
+            //       'vue-style-loader',
+            //       'css-loader'
+            //     ]
+            //   }
         ]
     }
+    // plugins: [
+    //     // 请确保引入这个插件！
+    //     new VueLoaderPlugin()
+    //   ]
     
     
 

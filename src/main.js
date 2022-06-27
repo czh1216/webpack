@@ -24,3 +24,5 @@ class App {
     static a = 123
 }
 console.log(App.a);
+
+import vue from './app.vue'
