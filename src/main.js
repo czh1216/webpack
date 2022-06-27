@@ -2,4 +2,6 @@ import './banner'
 import './tabs'
 
 import $ from 'jquery'
-$('#swiper').css('backgroundColor', 'red')
+$('#swiper').css('background-color', 'pink')
+
+import './styles/index.less'
