@@ -1,6 +1,11 @@
+body{
+    background: url("../assets/1.gif") no-repeat center;
+    /* background: url("../assets/1.gif") no-repeat center; */
+  }
 #swiper { 
     width: 800px;
     height: 100px; 
     background-color: hotpink; 
     color: '#000'
   }
+ 
